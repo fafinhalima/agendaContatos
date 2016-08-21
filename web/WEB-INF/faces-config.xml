@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+        <from-outcome>sucesso</from-outcome>
+        <to-view-id>/agenda.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>falha</from-outcome>
+        <to-view-id>/falhaLogin.jsp</to-view-id>
+    </navigation-case>
+</navigation-rule>
+<navigation-rule>
+    <from-view-id>/agenda.jsp</from-view-id>
+    <navigation-case>
+        <from-outcome>sucesso</from-outcome>
+        <to-view-id>/agenda.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>falha</from-outcome>
+        <to-view-id>/falhaRemocao.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>logoff</from-outcome>
+        <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+</navigation-rule>
+<managed-bean>
+    <managed-bean-name>usuario</managed-bean-name>
+    <managed-bean-class>beans.UsuarioBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+    <managed-bean-name>contato</managed-bean-name>
+    <managed-bean-class>beans.ContatoBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+
+
+</faces-config>
